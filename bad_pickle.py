@@ -3,17 +3,16 @@
 import cPickle
 import subprocess
 import base64
-import subprocess
 
 
 # Input injection
-def transcode_file(request, filename):
+def transcode_file(filename):
     command = 'ffmpeg -i "{source}" output_file.mpg'.format(source=filename)
     subprocess.call(command, shell=True)  # a bad idea!
 
 
 # Assert statements
-def foo(request, user):
+def fooo(user):
    assert user.is_admin, 'user does not have access'
    # secure code...
 
